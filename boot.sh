@@ -1,12 +1,12 @@
 #!/bin/bash
 
 export readonly RANDOM_NUMBER=$(date +%s-%N)
-cd /home/dv
+cd /home/harry/box
 
-if [[ ENVIRONMENT='Local' ]]; then
+if [[ ENVIRONMENT='local' ]]; then
   echo 'cron running with forever'
   forever -w -v cron.js
 else
   echo 'cron running without forever'
-  node /home/dv/cron.js
+  node cron.js
 fi

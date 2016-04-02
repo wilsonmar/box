@@ -1,8 +1,7 @@
 FROM shipimg/appbase:latest
 
-ADD . /home/dv/
+ADD . /home/harry/box/
 
-RUN mkdir -p /home/harry/my_projects/
-RUN cd /home/dv && npm install
+RUN cd /home/harry/box && npm install
 
-ENTRYPOINT ["/home/dv/boot.sh"]
+ENTRYPOINT ["/home/harry/box/boot.sh"]
