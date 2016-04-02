@@ -1,0 +1,30 @@
+{
+  "name": "box",
+  "version": "0.0.1",
+  "description": "A cron application which sends a pulse to a database regularly. ",
+  "main": "cron.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harryi3t/box.git"
+  },
+  "keywords": [
+    "cron"
+  ],
+  "author": "harryi3t (https://github.com/harryi3t)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/harryi3t/box/issues"
+  },
+  "homepage": "https://github.com/harryi3t/box#readme",
+  "dependencies": {
+    "async": "^2.0.0-rc.2",
+    "mongoose": "^4.4.10",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "node-inspector": "^0.12.7"
+  }
+}
