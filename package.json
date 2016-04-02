@@ -3,9 +3,6 @@
   "version": "0.0.1",
   "description": "A cron application which sends a pulse to a database regularly. ",
   "main": "cron.js",
-  "scripts": {
-    "test": "test.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/harryi3t/box.git"
