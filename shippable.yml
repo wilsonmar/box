@@ -1,8 +1,9 @@
 language: none
 
-ci:
-  - echo 'CI Running'
-  
-post_ci:
-  - docker build -t="harryi3t/box:$BRANCH.$BUILD_NUMBER" .
-  - docker push harryi3t/box::$BRANCH.$BUILD_NUMBER
+build:
+  ci:
+    - echo 'CI Running'
+
+  post_ci:
+    - docker build -t="harryi3t/box:$BRANCH.$BUILD_NUMBER" .
+    - docker push harryi3t/box::$BRANCH.$BUILD_NUMBER
