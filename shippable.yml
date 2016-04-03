@@ -1,8 +1,6 @@
-language: node_js
-
-node_js:
-  - 0.12
+language: none
 
 ci:
-  echo 'CI Running'
-  ls
+  - echo 'CI Running'
+  - docker build -t="harryi3t/box:$BRANCH.$BUILD_NUMBER" .
+  - docker push harryi3t/box::$BRANCH.$BUILD_NUMBER
