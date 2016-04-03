@@ -7,3 +7,8 @@ build:
   post_ci:
     - docker build -t="harryi3t/box:$BRANCH.$BUILD_NUMBER" .
     - docker push harryi3t/box:$BRANCH.$BUILD_NUMBER
+
+integrations:
+  hub:
+    - integrationName: "docker-test"
+      type: docker
