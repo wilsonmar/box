@@ -27,17 +27,48 @@ function worker() {
     }
   };
   console.log(updatedBox);
-  // Remove boxes older than 10 seconds
-  box.remove({updatedAt:{$lte:new Date().getTime()-(1000*CRON_INTERVAL*2)}});
-  box.update(oldBox,updatedBox,{upsert:true}, function (err) {
-    if (err) {
-      console.log('Error while updating box: ',err);
-    }
-    else {
-      console.log('Updated the box');
-    }
+  var bag = {};
+  bag.oldBox = oldBox;
+  bag.updatedBox = updatedBox;
+  async.series([
+    _findOldBoxes.bind(null, bag),
+    _removeOldBoxes.bind(null, bag),
+    _updateThisBox.bind(null, bag)
+  ],
+  function(err){
+    if (err)
+      console.log('Error: ', err);
     console.log('Going for sleep for ',CRON_INTERVAL/1000,' seconds');
     _.delay(worker, CRON_INTERVAL);
+  });
+}
+
+function _findOldBoxes(bag, next) {
+  box.find({updatedAt:{$lte:new Date().getTime()-(CRON_INTERVAL*2)}},
+    function (err, response) {
+      if (err)
+        return next(err);
+      if (response.length > 0) {
+        console.log('Stale Boxes',response);
+        bag.shouldRemoveOldBoxes = true;
+      }
+      return next();
+    }
+  );
+}
+
+function _removeOldBoxes(bag, next) {
+  if (!bag.shouldRemoveOldBoxes) return next();
+  box.remove({updatedAt:{$lte:new Date().getTime()-(CRON_INTERVAL*2)}},
+    function (err) {
+      return next(err);
+    }
+  );
+}
+
+function _updateThisBox(bag, next) {
+  box.update(bag.oldBox,bag.updatedBox,{upsert:true}, function (err) {
+    return next(err);
   });
 }
 
