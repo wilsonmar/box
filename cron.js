@@ -27,6 +27,8 @@ function worker() {
     }
   };
   console.log(updatedBox);
+  // Remove boxes older than 10 seconds
+  box.remove({updatedAt:{$lte:new Date().getTime()-(1000*CRON_INTERVAL*2)}});
   box.update(oldBox,updatedBox,{upsert:true}, function (err) {
     if (err) {
       console.log('Error while updating box: ',err);
