@@ -49,7 +49,7 @@ function _findOldBoxes(bag, next) {
       if (err)
         return next(err);
       if (response.length > 0) {
-        console.log('Stale Boxes',response);
+        console.log('Stale Boxes', _.pluck(response, 'environment'));
         bag.shouldRemoveOldBoxes = true;
       }
       return next();
