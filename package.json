@@ -5,7 +5,7 @@
   "main": "cron.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/harryi3t/box.git"
+    "url": "git+https://github.com/aye0aye/box.git"
   },
   "keywords": [
     "cron"
@@ -13,9 +13,9 @@
   "author": "harryi3t (https://github.com/harryi3t)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/harryi3t/box/issues"
+    "url": "https://github.com/aye0aye/box/issues"
   },
-  "homepage": "https://github.com/harryi3t/box#readme",
+  "homepage": "https://github.com/aye0aye/box#readme",
   "dependencies": {
     "async": "^2.0.0-rc.2",
     "mongoose": "^4.4.10",
