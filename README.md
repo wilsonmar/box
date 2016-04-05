@@ -2,11 +2,7 @@
 A cron application which sends a pulse to a database regularly.
 
 #### Environment Variables Required:
- - DB_USERNAME
- - DB_PASSWORD
- - DB_HOST
- - DB_PORT
- - DB_NAME
+ - DB_URL  (mongodb://<dbuser>:<dbPassword>@ds0<hostName>/<dbName>)
  - ENVIRONMENT
 
 This project works together with [Data Visualization][1] project.
