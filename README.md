@@ -2,7 +2,10 @@
 A cron application which sends a pulse to a database regularly.
 
 #### Environment Variables Required:
- - DB_URL `mongodb://<user>:<pass>@<host>:<port>`
+ - DB_USERNAME
+ - DB_PASSWORD
+ - DB_HOST
+ - DB_PORT
  - DB_NAME
  - ENVIRONMENT
 
