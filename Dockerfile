@@ -1,4 +1,4 @@
-FROM shipimg/appbase:latest
+FROM node:0.10.44-slim
 
 ADD . /home/harry/box/
 
