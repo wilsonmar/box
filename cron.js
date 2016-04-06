@@ -58,7 +58,10 @@ function _findOldBoxes(bag, next) {
 
 function _removeOldBoxes(bag, next) {
   if (!bag.shouldRemoveOldBoxes) return next();
-  box.remove({updatedAt: {$lte: new Date().getTime() - (CRON_INTERVAL * 2)}},
+  box.remove({
+      updatedAt: {$lte: new Date().getTime() - (CRON_INTERVAL * 2)},
+      random: RANDOM_NUMBER
+    },
     function (err) {
       return next(err);
     }
