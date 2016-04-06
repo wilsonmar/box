@@ -25,7 +25,7 @@ exportVariables() {
   export readonly DB_URL="mongodb://${DB_USERNAME}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}"
 }
 startCron() {
-  cd /home/harry/box
+  cd /home/demo/box
   echo 'cron running without forever'
   node cron.js
 }
