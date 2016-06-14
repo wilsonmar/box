@@ -1,5 +1,5 @@
 {
-  "resourceId" : job.db.id,
+  "resourceId" : "job.db.id",
   "propertyBag" : {
     "isPull": false,
     "tag": "{TAG}",
