@@ -2,7 +2,7 @@
 
 ls -al
 BODY=$(<./body.json)
-VERSION_URL='http://beta.shippable.com//v2/versions'
+VERSION_URL='https://beta.shippable.com/v2/versions'
 
 echo "$BODY"
 
