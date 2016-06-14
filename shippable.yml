@@ -8,11 +8,10 @@ build:
     - echo 'CI Running'
     - export IMAGE_NAME=aye0aye/box
     - ./build.sh
-    - ./push.sh
-    - ./curl.sh
 
   post_ci:
-    - ls -al
+    - ./push.sh
+    - ./curl.sh
 
 integrations:
   hub:
