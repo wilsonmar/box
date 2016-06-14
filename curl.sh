@@ -6,5 +6,4 @@ VERSION_URL='http://beta.shippable.com//v2/versions'
 
 echo "$BODY"
 
-echo "$SHIPPABLE_API_TOKEN"
-curl -H "Content-Type: application/json" -H "Authorization: apiToken $SHIPPABLE_API_TOKEN" -X POST -d "$BODY" $VERSION_URL
+curl -v -H "Content-Type: application/json" -H "Authorization: apiToken $SHIPPABLE_API_TOKEN" -X POST "$VERSION_URL" -d "$BODY"
