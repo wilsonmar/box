@@ -1,7 +1,7 @@
 #!/bin/bash -e
 if [ "$IS_PULL_REQUEST" != true ]; then
   export TAG=$IMAGE_NAME:$BRANCH.$BUILD_NUMBER
-  ECHO $TAG
+  echo $TAG
 
   sudo docker push $IMAGE_NAME:$TAG
   sed -i -e 's/{TAG}/'$TAG'/g' body.json
