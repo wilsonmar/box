@@ -11,6 +11,7 @@ build:
 
   post_ci:
     - ./push.sh
+    - ./curl.sh
 
 integrations:
   hub:
