@@ -1,6 +1,12 @@
 #!/bin/bash -e
 if [ "$IS_PULL_REQUEST" != true ]; then
-  sudo docker push $IMAGE_NAME:$BRANCH.$BUILD_NUMBER
+  export TAG=$IMAGE_NAME:$BRANCH.$BUILD_NUMBER
+  ECHO $TAG
+
+  sudo docker push $IMAGE_NAME:$TAG
+  sed -i -e 's/{TAG}/'$TAG'/g' body.json
+
+  cat body.json
 else
   echo "skipping because it's a PR"
 fi

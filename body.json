@@ -1,0 +1,8 @@
+{
+  "resourceId" : job.db.id,
+  "propertyBag" : {
+    "isPull": false,
+    "tag": "{TAG}",
+    "integration": "avinci-dh"
+  }
+}
