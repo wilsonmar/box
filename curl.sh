@@ -1,6 +1,5 @@
 #!/bin/bash -e
 
-ls -al
 BODY=$(<./body.json)
 VERSION_URL='https://apibeta.shippable.com/v2/versions'
 
