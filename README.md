@@ -1,4 +1,4 @@
-# Box
+# Box demo
 A cron application which sends a pulse to a database regularly.
 
 #### Environment Variables Required:
