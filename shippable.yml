@@ -10,7 +10,7 @@ build:
 
 integrations:
   hub:
-    - integrationName: "Docker Hub"
+    - integrationName: ttrahan-dh
       type: docker
       branches:
         only:
