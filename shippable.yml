@@ -14,4 +14,4 @@ integrations:
       type: docker
       branches:
         only:
-          - triton
+          - master
