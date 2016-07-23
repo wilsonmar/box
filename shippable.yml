@@ -15,3 +15,17 @@ integrations:
       branches:
         only:
           - master
+
+integrations:
+  notifications:
+    - integrationName: trigger-box-pipeline
+      type: webhook
+      payload:
+        - resourceId=13926
+        - versionName=$BRANCH.$BUILD_NUMBER
+      branches:
+        only:
+          - master
+      on_success: always
+      on_failure: never
+      on_start: never
