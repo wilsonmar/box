@@ -16,7 +16,6 @@ integrations:
         only:
           - master
 
-integrations:
   notifications:
     - integrationName: trigger-box-pipeline
       type: webhook
