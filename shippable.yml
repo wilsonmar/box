@@ -22,6 +22,7 @@ integrations:
       payload:
         - resourceId=14498
         - versionName=$BRANCH.$BUILD_NUMBER
+        - propertyBag='{}'
       branches:
         only:
           - master
