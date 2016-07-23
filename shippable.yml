@@ -20,7 +20,7 @@ integrations:
     - integrationName: trigger-box-pipeline
       type: webhook
       payload:
-        - resourceId=13926
+        - resourceId=14498
         - versionName=$BRANCH.$BUILD_NUMBER
       branches:
         only:
