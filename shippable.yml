@@ -22,7 +22,6 @@ integrations:
       payload:
         - resourceId=14498
         - versionName=$BRANCH.$BUILD_NUMBER
-        - propertyBag='{ "integration": "ttrahan-dh" }'
       branches:
         only:
           - master
